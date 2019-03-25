@@ -3,6 +3,7 @@ package se.falukropp
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.support.v4.os.ConfigurationCompat
 import android.widget.RemoteViews
 import java.time.LocalDate
 import java.util.*
@@ -33,8 +34,10 @@ class WeekNumberAppWidget : AppWidgetProvider() {
             context: Context, appWidgetManager: AppWidgetManager,
             appWidgetId: Int
         ) {
+            // maybe allow override?
+            // val currentLocale = ConfigurationCompat.getLocales(context.resources.configuration)[0]
 
-            val weekNumber = GregorianCalendar(Locale("sv", "SW")).get(Calendar.WEEK_OF_YEAR)
+            val weekNumber = GregorianCalendar().get(Calendar.WEEK_OF_YEAR)
 
             // Construct the RemoteViews object
             val views = RemoteViews(context.packageName, R.layout.week_number_app_widget)
