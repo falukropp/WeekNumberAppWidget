@@ -3,6 +3,8 @@
                     android:minWidth="40dp"
                     android:minHeight="40dp"
                     android:updatePeriodMillis="300000"
+                    android:configure="se.falukropp.WeekNumberAppWidgetConfiguration"
+                    android:widgetFeatures="reconfigurable"
                     android:previewImage="@drawable/example_appwidget_preview"
                     android:initialLayout="@layout/week_number_app_widget"
                     android:resizeMode="horizontal|vertical"
