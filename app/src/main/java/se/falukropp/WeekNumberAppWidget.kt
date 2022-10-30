@@ -33,7 +33,7 @@ class WeekNumberAppWidget : AppWidgetProvider() {
             appWidgetId: Int
         ) {
             // maybe allow override?
-            val currentLocale = context.resources.configuration.locales[0]
+            val currentLocale = WeekNumberWidgetPrefs.loadLocaleSetting(context) ?: context.resources.configuration.locales[0]
 
             val weekNumber = GregorianCalendar(currentLocale).get(Calendar.WEEK_OF_YEAR)
 
